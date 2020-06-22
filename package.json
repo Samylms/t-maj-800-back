@@ -1,0 +1,19 @@
+{
+  "name": "t-maj-800-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samylms/t-maj-800-back.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Samylms/t-maj-800-back/issues"
+  },
+  "homepage": "https://github.com/Samylms/t-maj-800-back#readme"
+}
