@@ -7,16 +7,16 @@ const userController = require('../controllers/userController');
 
 
     app.route('/users').get(passportJWT.authenticate('jwt', { session: false }), userController.users);
-    app.route('/user/login').post(userController.users_login);
-    app.route('/user/logout').get(passportJWT.authenticate('jwt', { session: false }), function (req, res) {
+    app.route('/users/login').post(userController.users_login);
+    app.route('/users/logout').get(passportJWT.authenticate('jwt', { session: false }), function (req, res) {
         req.logout();
         res.json({ success: true });
     });
 
-    app.route('/user/signup').post(userController.users_create);
-    app.route('/user/:id_user').get(passportJWT.authenticate('jwt',{session:false}), userController.user);
-    app.route('/user/edit').patch(passportJWT.authenticate('jwt',{session:false}), userController.users_update);
-    app.route('/user/:id_user/delete').delete(passportJWT.authenticate('jwt',{session:false}), userController.users_delete);
+    app.route('/users/signup').post(userController.users_create);
+    app.route('/users/:id_user').get(passportJWT.authenticate('jwt',{session:false}), userController.user);
+    app.route('/users/edit').patch(passportJWT.authenticate('jwt',{session:false}), userController.users_update);
+    app.route('/users/:id_user').delete(passportJWT.authenticate('jwt',{session:false}), userController.users_delete);
 
 
 }

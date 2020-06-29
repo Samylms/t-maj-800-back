@@ -66,7 +66,7 @@ exports.user = function (req, res) {
         if (user) {
             res.status(200).json({ user_id: user._id, login: user.pseudo, email: user.email, name: user.name, firstname: user.firstname })
         } else {
-            res.status(204).json({ message: "this user doesn't exist" });
+            res.status(404).json({ message: "this user doesn't exist" });
         }
     }).catch(function (error) {
         console.log(error);

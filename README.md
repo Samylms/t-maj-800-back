@@ -35,7 +35,7 @@ mongo -u devapi -p devapi --authenticationDatabase "t-maj-api"
 
 ### Login route
      
-### POST | /user/login
+### POST | /users/login
 	
 	{
         
@@ -47,10 +47,10 @@ mongo -u devapi -p devapi --authenticationDatabase "t-maj-api"
          
 
 ### GET | /users
-### GET | /user/logout
+### GET | /users/logout
 
 
-### POST | /user/signup
+### POST | /users/signup
 	
 	{
         pseudo:String,
@@ -60,8 +60,8 @@ mongo -u devapi -p devapi --authenticationDatabase "t-maj-api"
 		    password:String
 	}
 	
-### GET | /user/:id_user
-### PUT | /user/edit
+### GET | /users/:id_user
+### PUT | /users/edit
 	{
         pseudo:String,
         email:String,
@@ -70,5 +70,5 @@ mongo -u devapi -p devapi --authenticationDatabase "t-maj-api"
 		password:String
 	}
 	
-### DELETE | /user/:id_user/delete
+### DELETE | /users/:id_user
 
