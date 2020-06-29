@@ -89,7 +89,7 @@ exports.users_update = function (req, res) {
         salt: salt
     }, function (err, user) {
         if (err) {
-            res.status(204).send(err)
+            res.status(404).send(err)
         } else {
             res.status(200).json({ success: true, user: user._id });
         }
@@ -99,7 +99,7 @@ exports.users_update = function (req, res) {
 exports.users_delete = function (req, res) {
     User.findByIdAndDelete(req.params.user_id, function (err, result) {
         if (err) {
-            res.status(204).send(err);
+            res.status(404).send(err);
         } else {
             res.status(200).json({ message: "the user has been deleted" })
         }
