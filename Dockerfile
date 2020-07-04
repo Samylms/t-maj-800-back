@@ -5,4 +5,4 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 EXPOSE 8000
-CMD ["npx", "nodemon", "rs", "server.js"]
+CMD ["npm", "start"]

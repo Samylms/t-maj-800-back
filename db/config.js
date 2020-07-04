@@ -1,7 +1,7 @@
 module.exports = {
     user: "devapi",
     pwd: "devapi",
-    host: "localhost",
-    port: "27017",
+    host: process.env.DB_HOST || "localhost",
+    port: process.env.DB_PORT || "27017",
     db: "t-maj-api"
 }
