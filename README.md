@@ -13,6 +13,7 @@ mongo admin -u root -p root
 ### Create the api database
 
 use t-maj-api
+
 db.init.insert({"name":"creation"})
 
 ### Create new db user

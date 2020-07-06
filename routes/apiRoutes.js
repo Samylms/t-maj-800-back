@@ -4,6 +4,7 @@ module.exports = function(app) {
 
 const passportJWT = require('../auth/jwtAuth');
 const userController = require('../controllers/userController');
+const polygon_controller = require('../controllers/polygonController');
 
 
     app.route('/users').get(passportJWT.authenticate('jwt', { session: false }), userController.users);
@@ -17,6 +18,10 @@ const userController = require('../controllers/userController');
     app.route('/users/:id_user').get(passportJWT.authenticate('jwt',{session:false}), userController.user);
     app.route('/users/edit').patch(passportJWT.authenticate('jwt',{session:false}), userController.users_update);
     app.route('/users/:id_user').delete(passportJWT.authenticate('jwt',{session:false}), userController.users_delete);
+
+     // Create a new polygon
+     app.route('/polygon').post(polygon_controller.create);
+ 
 
 
 }
