@@ -3,11 +3,7 @@ let mongoose = require('mongoose');
 
 let polygonSchema = mongoose.Schema({
   geometry: { 
-    type: {
-      type: String,  
-      enum: ['Point'],  
-      required: true 
-    }, 
+  
     coordinates: {
       type: [],
       required: true
