@@ -16,7 +16,7 @@ exports.create = (req, res) => {
     // Create a Polygon
     const polygon = new Polygon({
           geometry: {
-            
+            type:req.body.geometry.type ,
             coordinates:req.body.geometry.coordinates
           },
           city: req.body.city
