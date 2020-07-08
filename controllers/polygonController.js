@@ -19,7 +19,7 @@ exports.create = (req, res) => {
             type:req.body.geometry.type ,
             coordinates:req.body.geometry.coordinates
           },
-          city: req.body.city
+          type: req.body.type
      });
   
     // Save Polygon in the database

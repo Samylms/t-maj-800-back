@@ -5,7 +5,7 @@ let polygonSchema = mongoose.Schema({
   geometry: { 
     type: {
       type: String,  
-      enum: ['Point'],  
+      enum: ['Polygon'],  
       required: true 
     }, 
     coordinates: {
@@ -13,7 +13,7 @@ let polygonSchema = mongoose.Schema({
       required: true
     }
   },
-  city:String
+  type:String
 });
 
 module.exports = mongoose.model('Polygon', polygonSchema);
