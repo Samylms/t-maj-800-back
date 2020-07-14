@@ -45,7 +45,8 @@ exports.users_create = function (req, res, next) {
 exports.users_login = function (req, res, next) {
     User.findOne({ email: req.body.email }).then((user) => {
         if (!user) {
-            res.status(401).json({ success: false, msg: "could not find user" });
+            res.status(401).json({ success: false, msg: "could not find user or wrong password" });
+			return;
         }
 
 
@@ -56,7 +57,7 @@ exports.users_login = function (req, res, next) {
             res.status(200).json({ success: true, id: user._id, token: tokenObject.token, expiresIn: tokenObject.expires });
 
         } else {
-            res.status(401).json({ success: false, msg: "you entrered the wrong password" });
+            res.status(401).json({ success: false, msg: "could not find user or wrong password" });
         }
     });
 }
